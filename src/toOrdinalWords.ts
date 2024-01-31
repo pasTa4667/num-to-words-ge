@@ -9,14 +9,16 @@ import { toWords } from "./toWords";
  * @param gender Only needed for german, either 'n'/'f'/'m'
  * @returns number as ordinal in words
  */
-export function toOrdinalWord(num: number, lan: string = 'en', gender: string = 'n') {
+export function toOrdinalWords(num: number, lan: string = 'en', gender: string = 'n') {
 
     if(lan === 'de' || lan === 'ge') {
         return geToOrdinalWord(num, gender);
-    }
-
+    } 
+    
     if(lan === 'en') {
         const words = toWords(num, 'en');
         return makeOrdinal(words);
+    } else {
+        throw new Error('Language is not supported');
     }
 }

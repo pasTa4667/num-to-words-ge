@@ -1,3 +1,3 @@
 export * from './toWords';
-export * from './toOrdinalWord';
+export * from './toOrdinalWords';
 export * from './toOrdinal';
